@@ -33,8 +33,8 @@ jobs:
           terraform plan -no-color -out=tfplan 
           terraform show -no-color tfplan > tfplan_output.txt
         env:
-          ALICLOUD_ACCESS_KEY: LTAI5tDxVCGx6VnDGYCUJnUn
-          ALICLOUD_SECRET_KEY: K24P27fjI1T9dgqpvICjaCXB8oY0oO
+          ALICLOUD_ACCESS_KEY: ${{ secrets.ALICLOUD_ACCESS_KEY }}
+          ALICLOUD_SECRET_KEY: ${{ secrets.ALICLOUD_SECRET_KEY }}
 
       - name: Upload Plan Artifact
         uses: actions/upload-artifact@v3
