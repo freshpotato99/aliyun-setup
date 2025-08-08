@@ -1,9 +1,9 @@
 # main.tf
 provider "alicloud" {
-  region = "cn-hangzhou"  # 根据需求修改地域
+  region = "cn-hangzhou" # 根据需求修改地域
 }
 
-# RAM用户登录密码，
+# RAM用户登录密码
 variable "password" {
   default = "Test@123456!"
 }
