@@ -22,8 +22,11 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
+      - name: Terraform Plan  
+        run: terraform plan -state=terraform.tfstate -no-color -out=tfplan 
+
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform apply -state=terraform.tfstate -auto-approve -input=false
       
       - name: Upload tfstate
         uses: actions/upload-artifact@v4
